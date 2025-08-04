@@ -3,8 +3,8 @@ import util as u
 from PIL import Image
 
 
-def Detect(color):
-    inVid = cv.VideoCapture(1)
+def Detect(color,src=0):
+    inVid = cv.VideoCapture(src)
 
     while True:
         ret, frame = inVid.read()
@@ -31,8 +31,8 @@ def Detect(color):
     inVid.release()
     cv.destroyAllWindows()
 
-def DetectMulti(*colors):
-    inVid = cv.VideoCapture(1)
+def DetectMulti(*colors,src=0):
+    inVid = cv.VideoCapture(src)
 
     while True:
         ret, frame = inVid.read()
@@ -82,6 +82,9 @@ if(NumCol==1):
     print("Choose the color of the object You want to detect :")
     print("1.Green\n2.Red\n3.Yellow\n4.Blue\n5.Cyan\n6.Magenta\n7.Orange\n8.Pink")
     ch = int(input("Choice: "))
+    #src= input("Enter source (0,1,2.. for webcam):").strip()
+    #if src.isnumeric():
+      
 
 
     
